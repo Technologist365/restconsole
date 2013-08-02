@@ -97,8 +97,6 @@ window.addEvent('domready', function() {
             var theme = this.get('value');
             document.getElement('select[name="theme"] option[value="' + theme + '"]').set('selected', true);
             document.head.getElementById('theme').set('href', 'css/prettify/' + theme + '.css');
-
-            _gaq.push(['_trackEvent', 'Theme', theme]);
         }
     }).fireEvent('change');
 
@@ -312,7 +310,7 @@ window.addEvent('domready', function() {
 
         'reset': function(event) {
             // clear oAuth tokens
-            chrome.extension.getBackgroundPage().oAuth.clear();
+            oAuth.clear();
 
             // load stored defaults
             defaults = JSON.decode(localStorage.getItem('oauth-defaults'));
@@ -337,8 +335,6 @@ window.addEvent('domready', function() {
         },
 
         'authorize': function(event) {
-            var oAuth = chrome.extension.getBackgroundPage().oAuth;
-
             var data = this.toQueryString().parseQueryString();
 
             var missing = false;
@@ -436,8 +432,6 @@ window.addEvent('domready', function() {
 
             if (this.dataset.action) {
                 this.getParent('form').fireEvent(this.dataset.action, event);
-
-                _gaq.push(['_trackEvent', 'Request Form', this.dataset.action]);
             }
         },
 

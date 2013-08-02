@@ -1,12 +1,12 @@
 {
     "version": "4.0.2",
+    "manifest_version": 2,
 
     "name": "REST Console",
     "description": "REST Console is an HTTP Request Visualizer and Constructor tool, helps developers build, debug and test RESTful APIs.",
 
 
     "options_page": "index.html#options",
-    "background_page": "background.html",
 
     "icons": {
         "16": "images/logo/16.png",
