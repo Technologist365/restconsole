@@ -475,11 +475,11 @@
                                         <legend>Content Headers</legend>
 
                                         <div class="clearfix">
-                                            <label for="Content-Type">Content-Type</label>
+                                            <label for="ContentType">Content-Type</label>
                                             <div class="input">
                                                 <div class="input-prepend">
                                                     <label class="add-on"><input type="checkbox"/></label>
-                                                    <input class="span7" type="text" name="Content-Type" tabindex="4" autocomplete="on" placeholder="example: application/x-www-form-urlencoded" list="mimetypes" disabled/>
+                                                    <input id="ContentType" class="span7" type="text" name="Content-Type" tabindex="4" autocomplete="on" placeholder="example: application/x-www-form-urlencoded" list="mimetypes" disabled/>
                                                 </div>
                                                 <span class="help-block">The mime type of the body of the request (used with POST and PUT requests)</span>
                                             </div>
@@ -497,11 +497,11 @@
                                         </div>
 
                                         <div class="clearfix disabled">
-                                            <label for="Content-Length">Content-Length</label>
+                                            <label for="ContentLength">Content-Length</label>
                                             <div class="input">
                                                 <div class="input-prepend">
                                                     <label class="add-on"><input type="checkbox"/></label>
-                                                    <input class="span7" type="text" name="Content-Length" tabindex="4" autocomplete="on" placeholder="example: 348" disabled/>
+                                                    <input id="ContentLength" class="span7" type="text" name="Content-Length" tabindex="4" autocomplete="on" placeholder="example: 348" disabled/>
                                                 </div>
                                                 <span class="help-block">The length of the request body in octets (8-bit bytes).</span>
                                             </div>
@@ -512,18 +512,18 @@
                                             <div class="input">
                                                 <div class="input-prepend">
                                                     <label class="add-on"><input type="checkbox"/></label>
-                                                    <input class="span7" type="text" name="Cookie" tabindex="4" autocomplete="on" placeholder="example: UserID=JohnDoe; Max-Age=3600; Version=1" disabled/>
+                                                    <input id="Cookie" class="span7" type="text" name="Cookie" tabindex="4" autocomplete="on" placeholder="example: UserID=JohnDoe; Max-Age=3600; Version=1" disabled/>
                                                 </div>
                                                 <span class="help-block">an HTTP cookie previously sent by the server</span>
                                             </div>
                                         </div>
 
                                         <div class="clearfix">
-                                            <label for="Content-MD5">Content-MD5</label>
+                                            <label for="ContentMD5">Content-MD5</label>
                                             <div class="input">
                                                 <div class="input-prepend">
                                                     <label class="add-on"><input type="checkbox"/></label>
-                                                    <input class="span7" type="text" name="Content-MD5" tabindex="4" autocomplete="on" placeholder="example: Q2hlY2sgSW50ZWdyaXR5IQ==" disabled/>
+                                                    <input id="ContentMD5" class="span7" type="text" name="Content-MD5" tabindex="4" autocomplete="on" placeholder="example: Q2hlY2sgSW50ZWdyaXR5IQ==" disabled/>
                                                 </div>
                                                 <span class="help-block">A Base64-encoded binary MD5 sum of the content of the request body.</span>
                                             </div>
@@ -536,7 +536,7 @@
                                         <legend>Request Payload</legend>
 
                                         <div class="clearfix">
-                                            <label for="raw">RAW Body</label>
+                                            <label>RAW Body</label>
                                             <div class="input">
                                                 <div class="input-prepend">
                                                     <label class="add-on"><input type="checkbox"/></label>
@@ -555,7 +555,7 @@
                                         <legend>Request Payload</legend>
 
                                         <div class="clearfix">
-                                            <label for="raw">Request Parameters</label>
+                                            <label>Request Parameters</label>
                                             <div class="input">
                                                 <div class="input">
                                                     <ul class="unstyled params">
@@ -578,7 +578,7 @@
                                         <legend>Custom Headers</legend>
 
                                         <div class="clearfix">
-                                            <label for="raw">Request Parameters</label>
+                                            <label>Request Parameters</label>
                                             <div class="input">
                                                 <div class="input">
                                                     <ul class="unstyled headers">
@@ -605,17 +605,17 @@
                                     <div class="row">
                                         <div class="span8">
                                             <div class="clearfix">
-                                                <label for="files">File(s)</label>
+                                                <label>File(s)</label>
                                                 <div class="input">
                                                     <input class="input-file" name="files" multiple="multiple" type="file"/>
-                                                    <span class="help-block">Choose one or more files to upload. By default, file names will be used as paremter keys.</span>
+                                                    <span class="help-block">Choose one or more files to upload. By default, file names will be used as parameter keys.</span>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="span8">
                                             <div class="clearfix">
-                                                <label for="file_key">Parameter Key</label>
+                                                <label>Parameter Key</label>
 
                                                 <div class="input">
                                                     <div class="input-prepend">
@@ -642,7 +642,7 @@
                             <div class="row">
                                 <div class="span16">
                                     <div class="clearfix">
-                                        <label for="version">Authorization Header:</label>
+                                        <label>Authorization Header:</label>
                                         <div class="input">
                                             <div class="input-prepend">
                                                 <label class="add-on"><input type="checkbox"/></label>
@@ -1011,6 +1011,14 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="span">
+                                        <div class="clearfix">
+                                            <label for="httpCode">HTTP CODE</label>
+
+                                            <span id="httpCode" class="badge"></span>
                                         </div>
                                     </div>
 

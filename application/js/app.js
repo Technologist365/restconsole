@@ -743,6 +743,13 @@ window.addEvent('domready', function() {
                             }.bind(this));
 
                             var responseHeaders = 'Status Code: {0}\n{1}'.substitute([this.xhr.status, this.xhr.getAllResponseHeaders()]);
+                            var httpCode = this.xhr.status;
+                            var badgeColor = "";
+                            switch(httpCode) {
+                                case 200: badgeColor = "badge-success"; break;
+                                case 401: badgeColor = "badge-important"; break;
+                                case 500: badgeColor = "badge-inverse"; break;
+                            };
 
                             // setup response area
                             document.id('rawBody').set('text', responseText)
@@ -750,6 +757,7 @@ window.addEvent('domready', function() {
                             document.id('responseHeaders').set('text', responseHeaders).store('unstyled', responseHeaders);
                             document.id('requestBody').set('text', requestText).store('unstyled', requestText);
                             document.id('requestHeaders').set('text', requestHeaders).store('unstyled', requestHeaders);
+                            document.id('httpCode').set('text', httpCode).set('class', badgeColor);
 
                             // extract content type
                             var contentType = this.xhr.getResponseHeader('Content-Type');
